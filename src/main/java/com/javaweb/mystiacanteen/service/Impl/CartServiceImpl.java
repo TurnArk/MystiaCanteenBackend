@@ -1,16 +1,22 @@
 package com.javaweb.mystiacanteen.service.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javaweb.mystiacanteen.entity.Cart;
 import com.javaweb.mystiacanteen.entity.CartData;
 import com.javaweb.mystiacanteen.entity.Production;
 import com.javaweb.mystiacanteen.entity.ProductionData;
+import com.javaweb.mystiacanteen.exception.RedisCartParseException;
 import com.javaweb.mystiacanteen.mapper.*;
 import com.javaweb.mystiacanteen.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -25,12 +31,30 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements Ca
     private FoodMapper foodMapper;
     @Autowired
     private KitchenwareMapper kitchenwareMapper;
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Override
     public List<ProductionData> getAllCart(String username){
 
         //从购物车表里选出该用户的购物车数据
-        List<CartData> cartData = cartMapper.getAllProductName(username);
+        List<CartData> cartData = null;
+        if(redisTemplate.opsForValue().get("cart"+username)==null)
+            cartData = cartMapper.getAllProductName(username);
+        else{
+            try{
+                Object cartDataObj = redisTemplate.opsForValue().get("cart:user123");
+                ObjectMapper objectMapper = new ObjectMapper();
+                if (cartDataObj instanceof String) {
+                    String json = (String) cartDataObj;
+                    cartData = objectMapper.readValue(json, new TypeReference<List<CartData>>() {});
+                }
+            }catch (JsonProcessingException e){
+                // 处理 JSON 解析失败的情况
+                log.error("Failed to parse cart data from Redis", e);
+                throw new RedisCartParseException("Failed to parse cart data from Redis", e);
+            }
+        }
         List<ProductionData> productionDataList = new ArrayList<>();
 
         for (CartData item : cartData) {

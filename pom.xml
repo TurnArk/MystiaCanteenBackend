@@ -109,7 +109,16 @@
             <version>5.8.0</version> <!-- 选择与你的版本兼容的版本 -->
         </dependency>
 
-
+        <!-- Jedis部分 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>5.1.0</version>
+        </dependency>
 
     </dependencies>
 
