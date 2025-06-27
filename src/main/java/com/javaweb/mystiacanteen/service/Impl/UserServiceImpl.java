@@ -7,6 +7,7 @@ import com.javaweb.mystiacanteen.service.IdentifyCodeService;
 import com.javaweb.mystiacanteen.service.PasswordService;
 import com.javaweb.mystiacanteen.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.mail.*;
@@ -23,6 +24,15 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
 
     @Autowired
     private IdentifyCodeService identifyCodeService;
+
+    @Autowired
+    private Properties mailProperties;
+
+    @Value("${mail.from}")
+    private String from;
+
+    @Value("${mail.password}")
+    private String password;
 
     @Override
     public Boolean login(String username,String password) {
@@ -53,19 +63,19 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
 
     @Override
     public String mailCode(String email){//发送验证码邮件
-        String host = "smtp.qq.com";
-        String from = "your_email";
-        String password = "your_email_password";
+//        String host = "smtp.qq.com";
+//        String from = "your_email";
+//        String password = "your_email_password";
+//
+//        Properties props = new Properties();
+//        props.put("mail.smtp.host", host);
+//        props.put("mail.smtp.auth", "true");
+//        props.put("mail.smtp.ssl.enable", "true");
+//        props.put("mail.smtp.port", "465");
+//        props.put("mail.smtp.connectiontimeout", "5000");  // 连接超时
+//        props.put("mail.smtp.timeout", "5000");  // 读取超时
 
-        Properties props = new Properties();
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.ssl.enable", "true");
-        props.put("mail.smtp.port", "465");
-        props.put("mail.smtp.connectiontimeout", "5000");  // 连接超时
-        props.put("mail.smtp.timeout", "5000");  // 读取超时
-
-        Session session = Session.getInstance(props,new Authenticator() {
+        Session session = Session.getInstance(mailProperties,new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(from, password);
