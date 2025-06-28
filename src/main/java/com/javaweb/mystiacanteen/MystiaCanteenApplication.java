@@ -1,5 +1,6 @@
 package com.javaweb.mystiacanteen;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javaweb.mystiacanteen.entity.Dish;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,12 @@ public class MystiaCanteenApplication {
             dish.setClick(0);
             dish.setBuy(0);
             dish.setType("dish");
-            redisTemplate.opsForValue().set("discountProduction", dish);
+            ObjectMapper objectMapper = new ObjectMapper();
+            String dishJson = objectMapper.writeValueAsString(dish);
+            // 手动拼接number字段
+            String updatedJson = dishJson.substring(0, dishJson.length() - 1)
+                    + ",\"number\":100}";
+            redisTemplate.opsForValue().set("discountProduction", updatedJson);
         };
     }
 

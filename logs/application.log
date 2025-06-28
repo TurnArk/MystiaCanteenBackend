@@ -996,3 +996,24 @@ java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" becaus
 2025-06-28T18:19:44.383+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : <==    Updates: 1
 2025-06-28T18:58:54.562+08:00  INFO 27180 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-06-28T18:58:54.567+08:00  INFO 27180 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-28T19:44:20.785+08:00  INFO 15244 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 15244 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
+2025-06-28T19:44:20.786+08:00 DEBUG 15244 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-06-28T19:44:20.787+08:00  INFO 15244 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-28T19:44:21.299+08:00  INFO 15244 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-28T19:44:21.300+08:00  INFO 15244 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-28T19:44:21.327+08:00  INFO 15244 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-06-28T19:44:21.758+08:00  INFO 15244 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
+2025-06-28T19:44:21.769+08:00  INFO 15244 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-28T19:44:21.769+08:00  INFO 15244 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-06-28T19:44:21.805+08:00  INFO 15244 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-28T19:44:21.805+08:00  INFO 15244 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 986 ms
+2025-06-28T19:44:22.405+08:00  WARN 15244 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
+2025-06-28T19:44:22.405+08:00  WARN 15244 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T19:44:22.456+08:00  WARN 15244 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
+2025-06-28T19:44:22.460+08:00  WARN 15244 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2025-06-28T19:44:22.474+08:00  WARN 15244 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
+2025-06-28T19:44:22.494+08:00  WARN 15244 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
+2025-06-28T19:44:22.494+08:00  WARN 15244 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T19:44:22.502+08:00  WARN 15244 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
+2025-06-28T19:44:22.835+08:00  INFO 15244 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
+2025-06-28T19:44:22.842+08:00  INFO 15244 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 2.339 seconds (process running for 2.769)
