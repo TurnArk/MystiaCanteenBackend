@@ -1,74 +1,954 @@
-2025-06-27T08:23:05.343+08:00  INFO 16264 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 16264 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
-2025-06-27T08:23:05.345+08:00 DEBUG 16264 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
-2025-06-27T08:23:05.346+08:00  INFO 16264 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-27T08:23:07.402+08:00  INFO 16264 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
-2025-06-27T08:23:07.421+08:00  INFO 16264 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-27T08:23:07.421+08:00  INFO 16264 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-06-27T08:23:07.482+08:00  INFO 16264 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-27T08:23:07.482+08:00  INFO 16264 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2079 ms
-2025-06-27T08:23:08.532+08:00  WARN 16264 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
-2025-06-27T08:23:08.532+08:00  WARN 16264 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2025-06-27T08:23:08.651+08:00  WARN 16264 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
-2025-06-27T08:23:08.669+08:00  WARN 16264 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
-2025-06-27T08:23:08.709+08:00  WARN 16264 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
-2025-06-27T08:23:08.768+08:00  WARN 16264 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
-2025-06-27T08:23:08.769+08:00  WARN 16264 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2025-06-27T08:23:08.789+08:00  WARN 16264 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
-2025-06-27T08:23:09.496+08:00  INFO 16264 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
-2025-06-27T08:23:09.507+08:00  INFO 16264 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 4.688 seconds (process running for 5.924)
-2025-06-27T08:24:17.830+08:00  INFO 15392 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 15392 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
-2025-06-27T08:24:17.832+08:00 DEBUG 15392 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
-2025-06-27T08:24:17.834+08:00  INFO 15392 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-06-27T08:24:18.968+08:00  INFO 15392 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
-2025-06-27T08:24:18.984+08:00  INFO 15392 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-27T08:24:18.984+08:00  INFO 15392 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-06-27T08:24:19.040+08:00  INFO 15392 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-27T08:24:19.040+08:00  INFO 15392 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1137 ms
-2025-06-27T08:24:19.926+08:00  WARN 15392 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
-2025-06-27T08:24:19.926+08:00  WARN 15392 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2025-06-27T08:24:20.014+08:00  WARN 15392 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
-2025-06-27T08:24:20.025+08:00  WARN 15392 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
-2025-06-27T08:24:20.044+08:00  WARN 15392 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
-2025-06-27T08:24:20.076+08:00  WARN 15392 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
-2025-06-27T08:24:20.077+08:00  WARN 15392 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2025-06-27T08:24:20.092+08:00  WARN 15392 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
-2025-06-27T08:24:20.514+08:00  INFO 15392 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
-2025-06-27T08:24:20.524+08:00  INFO 15392 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 3.144 seconds (process running for 3.791)
-2025-06-27T08:51:56.479+08:00  INFO 15392 --- [mystia-canteen] [http-nio-7078-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-27T08:51:56.488+08:00  INFO 15392 --- [mystia-canteen] [http-nio-7078-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-27T08:51:56.530+08:00  INFO 15392 --- [mystia-canteen] [http-nio-7078-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 41 ms
-2025-06-27T08:51:56.784+08:00  INFO 15392 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-27T08:51:57.211+08:00  INFO 15392 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2e55509d
-2025-06-27T08:51:57.214+08:00  INFO 15392 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-27T08:51:57.226+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.delCode  : ==>  Preparing: DELETE FROM identify_code WHERE out_time<=?
-2025-06-27T08:51:57.260+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.delCode  : ==> Parameters: 1750985516752(Long)
-2025-06-27T08:51:57.272+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.delCode  : <==    Updates: 1
-2025-06-27T08:51:57.278+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.getCode  : ==>  Preparing: SELECT code FROM identify_code WHERE email=?
-2025-06-27T08:51:57.279+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.getCode  : ==> Parameters: 3454965413@qq.com(String)
-2025-06-27T08:51:57.307+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.getCode  : <==      Total: 0
-2025-06-27T08:51:57.313+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.addCode  : ==>  Preparing: INSERT INTO identify_code(email,code,start_time,out_time) VALUES (?,?,?,?)
-2025-06-27T08:51:57.315+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.addCode  : ==> Parameters: 3454965413@qq.com(String), gJUatf(String), 1750985517312(Long), 1750985817312(Long)
-2025-06-27T08:51:57.320+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.addCode  : <==    Updates: 1
-2025-06-27T08:51:57.321+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.delCode  : ==>  Preparing: DELETE FROM identify_code WHERE out_time<=?
-2025-06-27T08:51:57.321+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.delCode  : ==> Parameters: 1750985517321(Long)
-2025-06-27T08:51:57.323+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.delCode  : <==    Updates: 0
-2025-06-27T08:51:57.323+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.getCode  : ==>  Preparing: SELECT code FROM identify_code WHERE email=?
-2025-06-27T08:51:57.323+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.getCode  : ==> Parameters: 3454965413@qq.com(String)
-2025-06-27T08:51:57.330+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.IdentifyCodeMapper.getCode  : <==      Total: 1
-2025-06-27T09:01:51.195+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.delCode  : ==>  Preparing: DELETE FROM identify_code WHERE out_time<=?
-2025-06-27T09:01:51.213+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.delCode  : ==> Parameters: 1750986111144(Long)
-2025-06-27T09:01:51.234+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.delCode  : <==    Updates: 1
-2025-06-27T09:01:51.238+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.getCode  : ==>  Preparing: SELECT code FROM identify_code WHERE email=?
-2025-06-27T09:01:51.239+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.getCode  : ==> Parameters: 3505538212@qq.com(String)
-2025-06-27T09:01:51.258+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.getCode  : <==      Total: 0
-2025-06-27T09:01:51.260+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.addCode  : ==>  Preparing: INSERT INTO identify_code(email,code,start_time,out_time) VALUES (?,?,?,?)
-2025-06-27T09:01:51.261+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.addCode  : ==> Parameters: 3505538212@qq.com(String), 9ggbSt(String), 1750986111260(Long), 1750986411260(Long)
-2025-06-27T09:01:51.268+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.addCode  : <==    Updates: 1
-2025-06-27T09:01:51.272+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.delCode  : ==>  Preparing: DELETE FROM identify_code WHERE out_time<=?
-2025-06-27T09:01:51.273+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.delCode  : ==> Parameters: 1750986111272(Long)
-2025-06-27T09:01:51.275+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.delCode  : <==    Updates: 0
-2025-06-27T09:01:51.275+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.getCode  : ==>  Preparing: SELECT code FROM identify_code WHERE email=?
-2025-06-27T09:01:51.275+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.getCode  : ==> Parameters: 3505538212@qq.com(String)
-2025-06-27T09:01:51.278+08:00 DEBUG 15392 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.IdentifyCodeMapper.getCode  : <==      Total: 1
-2025-06-27T09:03:33.296+08:00  INFO 15392 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-27T09:03:33.321+08:00  INFO 15392 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-28T15:19:51.622+08:00  INFO 5520 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 5520 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
+2025-06-28T15:19:51.625+08:00 DEBUG 5520 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-06-28T15:19:51.626+08:00  INFO 5520 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-28T15:19:52.536+08:00  INFO 5520 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-28T15:19:52.539+08:00  INFO 5520 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-28T15:19:52.570+08:00  INFO 5520 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2025-06-28T15:19:53.071+08:00  INFO 5520 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
+2025-06-28T15:19:53.083+08:00  INFO 5520 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-28T15:19:53.083+08:00  INFO 5520 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-06-28T15:19:53.128+08:00  INFO 5520 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-28T15:19:53.129+08:00  INFO 5520 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1465 ms
+2025-06-28T15:19:53.769+08:00  WARN 5520 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
+2025-06-28T15:19:53.769+08:00  WARN 5520 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T15:19:53.924+08:00  WARN 5520 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
+2025-06-28T15:19:53.933+08:00  WARN 5520 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2025-06-28T15:19:53.947+08:00  WARN 5520 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
+2025-06-28T15:19:53.966+08:00  WARN 5520 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
+2025-06-28T15:19:53.966+08:00  WARN 5520 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T15:19:53.974+08:00  WARN 5520 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
+2025-06-28T15:19:54.343+08:00  INFO 5520 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
+2025-06-28T15:19:54.348+08:00  INFO 5520 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 3.042 seconds (process running for 3.952)
+2025-06-28T15:20:44.368+08:00  INFO 5520 --- [mystia-canteen] [http-nio-7078-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-28T15:20:44.369+08:00  INFO 5520 --- [mystia-canteen] [http-nio-7078-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-28T15:20:44.370+08:00  INFO 5520 --- [mystia-canteen] [http-nio-7078-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-28T15:20:44.501+08:00  INFO 5520 --- [mystia-canteen] [http-nio-7078-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-28T15:20:44.765+08:00  INFO 5520 --- [mystia-canteen] [http-nio-7078-exec-3] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5491a536
+2025-06-28T15:20:44.766+08:00  INFO 5520 --- [mystia-canteen] [http-nio-7078-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-28T15:20:44.771+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:20:44.786+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:20:44.845+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:20:44.881+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:20:44.881+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:20:44.896+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:20:46.882+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.mapper.UserMapper.getUser          : ==>  Preparing: SELECT * FROM user WHERE username=?
+2025-06-28T15:20:46.883+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.mapper.UserMapper.getUser          : ==> Parameters: 1716236031(String)
+2025-06-28T15:20:46.887+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.mapper.UserMapper.getUser          : <==      Total: 1
+2025-06-28T15:20:49.360+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:20:49.361+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:20:49.371+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:20:49.378+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:20:49.378+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:20:49.392+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:20:52.520+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.CartMapper.getAllProductName     : ==>  Preparing: SELECT name,num,type,cartId FROM cart WHERE username=?
+2025-06-28T15:20:52.520+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.CartMapper.getAllProductName     : ==> Parameters: 1716236031(String)
+2025-06-28T15:20:52.522+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.CartMapper.getAllProductName     : <==      Total: 2
+2025-06-28T15:20:52.527+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:20:52.527+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:20:52.529+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:20:52.529+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DrinkMapper.selectDrinkByName    : ==>  Preparing: SELECT * FROM drink WHERE name = ?
+2025-06-28T15:20:52.529+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DrinkMapper.selectDrinkByName    : ==> Parameters: 绿茶(String)
+2025-06-28T15:20:52.530+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DrinkMapper.selectDrinkByName    : <==      Total: 1
+2025-06-28T15:25:33.560+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.deleteCart       : ==>  Preparing: DELETE FROM cart WHERE username=? AND name=?
+2025-06-28T15:25:33.560+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.deleteCart       : ==> Parameters: 1716236031(String), 绿茶(String)
+2025-06-28T15:25:33.622+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.deleteCart       : <==    Updates: 1
+2025-06-28T15:25:35.531+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.CartMapper.getAllProductName     : ==>  Preparing: SELECT name,num,type,cartId FROM cart WHERE username=?
+2025-06-28T15:25:35.532+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.CartMapper.getAllProductName     : ==> Parameters: 1716236031(String)
+2025-06-28T15:25:35.533+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.CartMapper.getAllProductName     : <==      Total: 1
+2025-06-28T15:25:35.534+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:25:35.534+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:25:35.536+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:26:02.131+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:26:02.132+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:26:02.146+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:26:02.157+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:26:02.157+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:26:02.173+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:26:07.662+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T15:26:07.663+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 饭团(String)
+2025-06-28T15:26:07.665+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:26:07.665+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:26:07.666+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T15:26:07.666+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:26:07.666+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:26:07.667+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:26:07.667+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:26:07.668+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:26:07.671+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:26:07.671+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:26:07.673+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:26:07.673+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:26:07.673+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:26:07.673+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:26:07.674+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:26:07.674+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:26:07.674+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:26:07.675+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 饭团(String), dish(String), 7(Integer)
+2025-06-28T15:26:07.677+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:26:07.678+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:26:07.678+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 饭团(String), dish(String), 7(Integer)
+2025-06-28T15:26:07.679+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:26:14.199+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.UserMapper.getPassword      : ==>  Preparing: SELECT password FROM user WHERE username=?
+2025-06-28T15:26:14.199+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.UserMapper.getPassword      : ==> Parameters: 10000000001(String)
+2025-06-28T15:26:14.200+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.UserMapper.getPassword      : <==      Total: 0
+2025-06-28T15:26:14.202+08:00  WARN 5520 --- [mystia-canteen] [http-nio-7078-exec-7] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Empty encoded password
+2025-06-28T15:26:27.094+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.UserMapper.getPassword      : ==>  Preparing: SELECT password FROM user WHERE username=?
+2025-06-28T15:26:27.094+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.UserMapper.getPassword      : ==> Parameters: 1716236031(String)
+2025-06-28T15:26:27.097+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.UserMapper.getPassword      : <==      Total: 1
+2025-06-28T15:26:27.215+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:26:27.215+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:26:27.225+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:26:27.234+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:26:27.235+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:26:27.244+08:00 DEBUG 5520 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:26:32.315+08:00 ERROR 5520 --- [mystia-canteen] [http-nio-7078-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "cartData" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "cartData" is null
+	at com.javaweb.mystiacanteen.service.Impl.CartServiceImpl.getAllCart(CartServiceImpl.java:60) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.14.jar:6.1.14]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716) ~[spring-aop-6.1.14.jar:6.1.14]
+	at com.javaweb.mystiacanteen.service.Impl.CartServiceImpl$$SpringCGLIB$$0.getAllCart(<generated>) ~[classes/:na]
+	at com.javaweb.mystiacanteen.controller.CartController.getCart(CartController.java:20) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2025-06-28T15:27:44.370+08:00 ERROR 5520 --- [mystia-canteen] [http-nio-7078-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "cartData" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "cartData" is null
+	at com.javaweb.mystiacanteen.service.Impl.CartServiceImpl.getAllCart(CartServiceImpl.java:60) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.14.jar:6.1.14]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716) ~[spring-aop-6.1.14.jar:6.1.14]
+	at com.javaweb.mystiacanteen.service.Impl.CartServiceImpl$$SpringCGLIB$$0.getAllCart(<generated>) ~[classes/:na]
+	at com.javaweb.mystiacanteen.controller.CartController.getCart(CartController.java:20) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.14.jar:6.1.14]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.31.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.14.jar:6.1.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.31.jar:10.1.31]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2025-06-28T15:34:31.940+08:00  INFO 5520 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-28T15:34:31.945+08:00  INFO 5520 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-28T15:34:35.547+08:00  INFO 24032 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 24032 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
+2025-06-28T15:34:35.548+08:00 DEBUG 24032 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-06-28T15:34:35.548+08:00  INFO 24032 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-28T15:34:36.080+08:00  INFO 24032 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-28T15:34:36.081+08:00  INFO 24032 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-28T15:34:36.106+08:00  INFO 24032 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-06-28T15:34:36.509+08:00  INFO 24032 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
+2025-06-28T15:34:36.522+08:00  INFO 24032 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-28T15:34:36.522+08:00  INFO 24032 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-06-28T15:34:36.566+08:00  INFO 24032 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-28T15:34:36.566+08:00  INFO 24032 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 981 ms
+2025-06-28T15:34:37.155+08:00  WARN 24032 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
+2025-06-28T15:34:37.155+08:00  WARN 24032 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T15:34:37.361+08:00  WARN 24032 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
+2025-06-28T15:34:37.366+08:00  WARN 24032 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2025-06-28T15:34:37.378+08:00  WARN 24032 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
+2025-06-28T15:34:37.394+08:00  WARN 24032 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
+2025-06-28T15:34:37.394+08:00  WARN 24032 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T15:34:37.402+08:00  WARN 24032 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
+2025-06-28T15:34:37.729+08:00  INFO 24032 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
+2025-06-28T15:34:37.735+08:00  INFO 24032 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 2.452 seconds (process running for 2.836)
+2025-06-28T15:35:04.841+08:00  INFO 24032 --- [mystia-canteen] [http-nio-7078-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-28T15:35:04.841+08:00  INFO 24032 --- [mystia-canteen] [http-nio-7078-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-28T15:35:04.843+08:00  INFO 24032 --- [mystia-canteen] [http-nio-7078-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-28T15:35:04.975+08:00  INFO 24032 --- [mystia-canteen] [http-nio-7078-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-28T15:35:05.208+08:00  INFO 24032 --- [mystia-canteen] [http-nio-7078-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39a2b595
+2025-06-28T15:35:05.209+08:00  INFO 24032 --- [mystia-canteen] [http-nio-7078-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-28T15:35:05.213+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:35:05.232+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:35:05.249+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:35:13.285+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:35:13.286+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:35:13.336+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:35:13.359+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:35:13.360+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:35:13.372+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:35:14.748+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T15:35:14.749+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 饭团(String)
+2025-06-28T15:35:14.750+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:35:14.750+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:35:14.752+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:35:14.752+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:35:14.753+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:35:14.753+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T15:35:14.753+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:35:14.753+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:35:14.753+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:35:14.754+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:35:14.756+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:35:14.756+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:35:14.757+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:35:14.757+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:35:14.758+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:35:14.758+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:35:14.762+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:35:14.762+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 饭团(String), dish(String), 7(Integer)
+2025-06-28T15:35:14.765+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:35:14.766+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:35:14.767+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 饭团(String), dish(String), 7(Integer)
+2025-06-28T15:35:14.768+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:35:16.729+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T15:35:16.730+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 饭团(String)
+2025-06-28T15:35:16.733+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 1
+2025-06-28T15:35:16.734+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.updateNum        : ==>  Preparing: UPDATE cart SET num = num + ? WHERE cartId=?
+2025-06-28T15:35:16.735+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.updateNum        : ==> Parameters: 2(Integer), 14(Integer)
+2025-06-28T15:35:16.738+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.updateNum        : <==    Updates: 1
+2025-06-28T15:35:18.147+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:35:18.147+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:35:18.157+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:35:18.164+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:35:18.165+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:35:18.174+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:35:19.095+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:35:19.096+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:35:19.097+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:35:21.064+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:35:21.064+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:35:21.065+08:00 DEBUG 24032 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:40:52.496+08:00  INFO 24032 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-28T15:40:52.501+08:00  INFO 24032 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-28T15:40:55.499+08:00  INFO 26972 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 26972 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
+2025-06-28T15:40:55.501+08:00 DEBUG 26972 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-06-28T15:40:55.501+08:00  INFO 26972 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-28T15:40:55.969+08:00  INFO 26972 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-28T15:40:55.971+08:00  INFO 26972 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-28T15:40:55.994+08:00  INFO 26972 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2025-06-28T15:40:56.364+08:00  INFO 26972 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
+2025-06-28T15:40:56.375+08:00  INFO 26972 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-28T15:40:56.375+08:00  INFO 26972 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-06-28T15:40:56.411+08:00  INFO 26972 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-28T15:40:56.412+08:00  INFO 26972 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 870 ms
+2025-06-28T15:40:56.916+08:00  WARN 26972 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
+2025-06-28T15:40:56.916+08:00  WARN 26972 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T15:40:57.036+08:00  WARN 26972 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
+2025-06-28T15:40:57.041+08:00  WARN 26972 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2025-06-28T15:40:57.051+08:00  WARN 26972 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
+2025-06-28T15:40:57.075+08:00  WARN 26972 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
+2025-06-28T15:40:57.075+08:00  WARN 26972 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T15:40:57.084+08:00  WARN 26972 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
+2025-06-28T15:40:57.402+08:00  INFO 26972 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
+2025-06-28T15:40:57.408+08:00  INFO 26972 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 2.166 seconds (process running for 2.543)
+2025-06-28T15:41:02.458+08:00  INFO 26972 --- [mystia-canteen] [http-nio-7078-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-28T15:41:02.458+08:00  INFO 26972 --- [mystia-canteen] [http-nio-7078-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-28T15:41:02.458+08:00  INFO 26972 --- [mystia-canteen] [http-nio-7078-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-28T15:41:02.577+08:00  INFO 26972 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-28T15:41:02.817+08:00  INFO 26972 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@770fd2fc
+2025-06-28T15:41:02.818+08:00  INFO 26972 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-28T15:41:02.823+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:41:02.838+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:41:02.854+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:41:04.843+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:41:04.843+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:41:04.846+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:41:09.684+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.deleteCart       : ==>  Preparing: DELETE FROM cart WHERE username=? AND name=?
+2025-06-28T15:41:09.684+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.deleteCart       : ==> Parameters: 1716236031(String), 饭团(String)
+2025-06-28T15:41:09.687+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.deleteCart       : <==    Updates: 1
+2025-06-28T15:41:10.621+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.CartMapper.getAllProductName     : ==>  Preparing: SELECT name,num,type,cartId FROM cart WHERE username=?
+2025-06-28T15:41:10.622+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.CartMapper.getAllProductName     : ==> Parameters: 1716236031(String)
+2025-06-28T15:41:10.623+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.CartMapper.getAllProductName     : <==      Total: 0
+2025-06-28T15:41:12.380+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:41:12.380+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:41:12.419+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:41:12.430+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:41:12.430+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:41:12.443+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:41:13.767+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T15:41:13.767+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 饭团(String)
+2025-06-28T15:41:13.771+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:41:13.771+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:41:13.772+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T15:41:13.772+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:41:13.772+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:41:13.773+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:41:13.773+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:41:13.773+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:41:13.775+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:41:13.775+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:41:13.777+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:41:13.777+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:41:13.777+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:41:13.777+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:41:13.778+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:41:13.778+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:41:13.781+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:41:13.781+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 饭团(String), dish(String), 7(Integer)
+2025-06-28T15:41:13.784+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:41:13.784+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:41:13.785+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 饭团(String), dish(String), 7(Integer)
+2025-06-28T15:41:13.786+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:41:15.956+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T15:41:15.957+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 饭团(String)
+2025-06-28T15:41:15.957+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 0
+2025-06-28T15:41:15.958+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.addCart          : ==>  Preparing: INSERT INTO cart(username,name,num,type) VALUES (?,?,?,?)
+2025-06-28T15:41:15.958+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.addCart          : ==> Parameters: 1716236031(String), 饭团(String), 2(Integer), dish(String)
+2025-06-28T15:41:15.963+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.CartMapper.addCart          : <==    Updates: 1
+2025-06-28T15:41:17.388+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:41:17.388+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:41:17.399+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:41:17.406+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:41:17.406+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:41:17.415+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:43:45.604+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.CartMapper.getAllProductName     : ==>  Preparing: SELECT name,num,type,cartId FROM cart WHERE username=?
+2025-06-28T15:43:45.604+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.CartMapper.getAllProductName     : ==> Parameters: 1716236031(String)
+2025-06-28T15:43:45.605+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.CartMapper.getAllProductName     : <==      Total: 1
+2025-06-28T15:43:45.607+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:43:45.607+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:43:45.608+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:43:57.770+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:43:57.770+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:43:57.788+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:43:57.811+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:43:57.811+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:43:57.825+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:44:00.152+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:44:00.153+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:44:00.153+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:26.623+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:47:26.624+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:47:26.633+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:47:26.642+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:47:26.642+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:47:26.651+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:47:28.299+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:28.300+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:28.300+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:28.300+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:28.301+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:28.301+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:28.301+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:28.302+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:28.302+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:28.302+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:28.302+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:28.303+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:28.312+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T15:47:28.312+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 炙猪肉饭团(String)
+2025-06-28T15:47:28.317+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T15:47:28.317+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:28.318+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 炙猪肉饭团(String)
+2025-06-28T15:47:28.319+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:28.324+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:28.324+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 炙猪肉饭团(String), dish(String), 8(Integer)
+2025-06-28T15:47:28.325+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:47:28.326+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:28.326+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 炙猪肉饭团(String), dish(String), 8(Integer)
+2025-06-28T15:47:28.326+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:47:34.491+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.UserMapper.getPassword      : ==>  Preparing: SELECT password FROM user WHERE username=?
+2025-06-28T15:47:34.492+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.UserMapper.getPassword      : ==> Parameters: 1716236031(String)
+2025-06-28T15:47:34.497+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.mapper.UserMapper.getPassword      : <==      Total: 1
+2025-06-28T15:47:34.593+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:47:34.593+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:47:34.602+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:47:34.610+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:47:34.610+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:47:34.621+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:47:35.700+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:35.700+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:35.701+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:35.702+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:35.702+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:35.702+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T15:47:35.702+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:35.703+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:35.703+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:35.704+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:35.705+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:35.705+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:35.705+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:35.706+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:35.707+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T15:47:35.707+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:35.707+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:35.708+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:35.714+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:35.714+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 饭团(String), dish(String), 7(Integer)
+2025-06-28T15:47:35.715+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:47:35.717+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:35.717+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 饭团(String), dish(String), 7(Integer)
+2025-06-28T15:47:35.718+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 2
+2025-06-28T15:47:38.503+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:47:38.503+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:47:38.516+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:47:38.522+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:47:38.523+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:47:38.532+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:47:40.145+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:40.145+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:40.146+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:40.147+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:40.147+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:40.148+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:40.148+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:40.149+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:40.149+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T15:47:40.150+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 能量串(String)
+2025-06-28T15:47:40.150+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:40.151+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:40.151+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T15:47:40.151+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T15:47:40.155+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T15:47:40.155+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:40.155+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T15:47:40.156+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:40.162+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:40.162+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 能量串(String), dish(String), 5(Integer)
+2025-06-28T15:47:40.164+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 1
+2025-06-28T15:47:40.164+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T15:47:40.164+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 能量串(String), dish(String), 5(Integer)
+2025-06-28T15:47:40.165+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 1
+2025-06-28T15:47:41.825+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T15:47:41.825+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 能量串(String)
+2025-06-28T15:47:41.826+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 0
+2025-06-28T15:47:41.826+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.addCart          : ==>  Preparing: INSERT INTO cart(username,name,num,type) VALUES (?,?,?,?)
+2025-06-28T15:47:41.826+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.addCart          : ==> Parameters: 1716236031(String), 能量串(String), 1(Integer), dish(String)
+2025-06-28T15:47:41.830+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.addCart          : <==    Updates: 1
+2025-06-28T15:47:43.238+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T15:47:43.238+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T15:47:43.248+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T15:47:43.255+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T15:47:43.255+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T15:47:43.268+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T15:47:44.284+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:44.284+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:44.284+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:46.209+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:46.209+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:46.210+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:46.944+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:46.944+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:46.946+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:47.102+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:47.103+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:47.104+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:47.291+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:47.292+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:47.292+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:47.429+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:47.429+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:47.430+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:47.601+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:47.601+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:47.603+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:47.752+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:47.752+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:47.753+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:47.896+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:47.896+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:47.897+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:48.048+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:48.049+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:48.050+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:48.207+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:48.207+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:48.208+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:48.392+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:48.392+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:48.393+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:47:48.579+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:47:48.579+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:47:48.580+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T15:59:22.334+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T15:59:22.334+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T15:59:22.335+08:00 DEBUG 26972 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:09.495+08:00  INFO 26972 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-28T16:06:09.504+08:00  INFO 26972 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-28T16:06:12.433+08:00  INFO 19308 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 19308 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
+2025-06-28T16:06:12.434+08:00 DEBUG 19308 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-06-28T16:06:12.434+08:00  INFO 19308 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-28T16:06:12.875+08:00  INFO 19308 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-28T16:06:12.877+08:00  INFO 19308 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-28T16:06:12.900+08:00  INFO 19308 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2025-06-28T16:06:13.262+08:00  INFO 19308 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
+2025-06-28T16:06:13.271+08:00  INFO 19308 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-28T16:06:13.271+08:00  INFO 19308 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-06-28T16:06:13.306+08:00  INFO 19308 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-28T16:06:13.307+08:00  INFO 19308 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 845 ms
+2025-06-28T16:06:13.784+08:00  WARN 19308 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
+2025-06-28T16:06:13.785+08:00  WARN 19308 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T16:06:13.907+08:00  WARN 19308 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
+2025-06-28T16:06:13.911+08:00  WARN 19308 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2025-06-28T16:06:13.923+08:00  WARN 19308 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
+2025-06-28T16:06:13.948+08:00  WARN 19308 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
+2025-06-28T16:06:13.948+08:00  WARN 19308 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T16:06:13.956+08:00  WARN 19308 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
+2025-06-28T16:06:14.233+08:00  INFO 19308 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
+2025-06-28T16:06:14.238+08:00  INFO 19308 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 2.046 seconds (process running for 2.41)
+2025-06-28T16:06:18.100+08:00  INFO 19308 --- [mystia-canteen] [http-nio-7078-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-28T16:06:18.102+08:00  INFO 19308 --- [mystia-canteen] [http-nio-7078-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-28T16:06:18.104+08:00  INFO 19308 --- [mystia-canteen] [http-nio-7078-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-28T16:06:18.264+08:00  INFO 19308 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-28T16:06:18.509+08:00  INFO 19308 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7175372d
+2025-06-28T16:06:18.511+08:00  INFO 19308 --- [mystia-canteen] [http-nio-7078-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-28T16:06:18.515+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:18.531+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:06:18.547+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:27.472+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.CartMapper.getAllProductName     : ==>  Preparing: SELECT name,num,type,cartId FROM cart WHERE username=?
+2025-06-28T16:06:27.472+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.CartMapper.getAllProductName     : ==> Parameters: 1716236031(String)
+2025-06-28T16:06:27.473+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.CartMapper.getAllProductName     : <==      Total: 2
+2025-06-28T16:06:27.478+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:27.479+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:06:27.483+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:27.484+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:27.485+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:06:27.487+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:31.868+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:06:31.869+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:06:31.907+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:06:31.933+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:06:31.934+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:06:31.945+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:06:37.111+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T16:06:37.111+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:06:37.113+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:37.113+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:37.114+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:37.114+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:37.115+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T16:06:37.115+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:37.115+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:06:37.115+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:37.115+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:37.116+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:37.117+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:37.119+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:37.119+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:37.119+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:37.120+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:37.120+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:37.124+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:37.124+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 温暖饭团(String), dish(String), 9(Integer)
+2025-06-28T16:06:37.125+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:37.125+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:37.126+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 温暖饭团(String), dish(String), 9(Integer)
+2025-06-28T16:06:37.127+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:41.201+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.UserMapper.getPassword      : ==>  Preparing: SELECT password FROM user WHERE username=?
+2025-06-28T16:06:41.201+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.UserMapper.getPassword      : ==> Parameters: 1716236031(String)
+2025-06-28T16:06:41.205+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.UserMapper.getPassword      : <==      Total: 1
+2025-06-28T16:06:41.298+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:06:41.298+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:06:41.307+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:06:41.314+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:06:41.315+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:06:41.324+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:06:43.363+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:43.363+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T16:06:43.363+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:43.363+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:06:43.363+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:43.363+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:43.363+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:43.364+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:43.364+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:43.365+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:43.365+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:43.365+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:43.365+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:43.366+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:43.368+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T16:06:43.368+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:43.368+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:06:43.369+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:43.388+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:43.388+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 温暖饭团(String), dish(String), 9(Integer)
+2025-06-28T16:06:43.389+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:43.390+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:43.390+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 温暖饭团(String), dish(String), 9(Integer)
+2025-06-28T16:06:43.390+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:44.905+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T16:06:44.905+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 温暖饭团(String)
+2025-06-28T16:06:44.905+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 0
+2025-06-28T16:06:44.907+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.addCart          : ==>  Preparing: INSERT INTO cart(username,name,num,type) VALUES (?,?,?,?)
+2025-06-28T16:06:44.907+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.addCart          : ==> Parameters: 1716236031(String), 温暖饭团(String), 1(Integer), dish(String)
+2025-06-28T16:06:44.910+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.addCart          : <==    Updates: 1
+2025-06-28T16:06:46.708+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:06:46.708+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:06:46.716+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:06:46.724+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:06:46.724+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:06:46.734+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:06:47.818+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.CartMapper.getAllProductName     : ==>  Preparing: SELECT name,num,type,cartId FROM cart WHERE username=?
+2025-06-28T16:06:47.818+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.CartMapper.getAllProductName     : ==> Parameters: 1716236031(String)
+2025-06-28T16:06:47.819+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.CartMapper.getAllProductName     : <==      Total: 3
+2025-06-28T16:06:47.821+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:47.821+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:06:47.823+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:47.823+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:47.823+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:06:47.825+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:47.825+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:47.825+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:06:47.826+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:51.320+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:06:51.320+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:06:51.332+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:06:51.340+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:06:51.341+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:06:51.350+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:06:54.488+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:54.488+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:54.489+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:54.489+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T16:06:54.489+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:54.489+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:06:54.490+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:54.490+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:54.491+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:54.491+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:54.491+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:54.491+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:54.492+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:06:54.493+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:54.493+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T16:06:54.493+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:06:54.495+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:06:54.495+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:06:54.502+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:54.502+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 温暖饭团(String), dish(String), 9(Integer)
+2025-06-28T16:06:54.503+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:54.503+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:06:54.503+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 温暖饭团(String), dish(String), 9(Integer)
+2025-06-28T16:06:54.504+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:06:57.113+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T16:06:57.113+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 温暖饭团(String)
+2025-06-28T16:06:57.114+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 1
+2025-06-28T16:06:57.115+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.updateNum        : ==>  Preparing: UPDATE cart SET num = num + ? WHERE cartId=?
+2025-06-28T16:06:57.115+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.updateNum        : ==> Parameters: 5(Integer), 18(Integer)
+2025-06-28T16:06:57.118+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.mapper.CartMapper.updateNum        : <==    Updates: 1
+2025-06-28T16:06:59.878+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:06:59.878+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:06:59.887+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:06:59.895+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:06:59.896+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:06:59.905+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:07:00.806+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:00.807+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:07:00.808+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:00.809+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:00.809+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:07:00.810+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:00.810+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:00.810+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:07:00.812+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:09.987+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:09.988+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:07:09.989+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:09.989+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:09.989+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:07:09.990+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:09.991+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:09.991+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 温暖饭团(String)
+2025-06-28T16:07:09.993+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:13.967+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.deleteCart       : ==>  Preparing: DELETE FROM cart WHERE username=? AND name=?
+2025-06-28T16:07:13.968+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.deleteCart       : ==> Parameters: 1716236031(String), 温暖饭团(String)
+2025-06-28T16:07:13.970+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.deleteCart       : <==    Updates: 1
+2025-06-28T16:07:13.971+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.deleteCart       : ==>  Preparing: DELETE FROM cart WHERE username=? AND name=?
+2025-06-28T16:07:13.971+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.deleteCart       : ==> Parameters: 1716236031(String), 温暖饭团(String)
+2025-06-28T16:07:13.972+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.mapper.CartMapper.deleteCart       : <==    Updates: 0
+2025-06-28T16:07:14.821+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.CartMapper.getAllProductName     : ==>  Preparing: SELECT name,num,type,cartId FROM cart WHERE username=?
+2025-06-28T16:07:14.822+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.CartMapper.getAllProductName     : ==> Parameters: 1716236031(String)
+2025-06-28T16:07:14.823+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.CartMapper.getAllProductName     : <==      Total: 2
+2025-06-28T16:07:14.823+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:14.823+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:07:14.824+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:14.825+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:14.825+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:07:14.825+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:19.980+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:07:19.981+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:07:19.991+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:07:20.002+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:07:20.002+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:07:20.013+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:07:45.133+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:07:45.134+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:07:45.135+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:07:45.135+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:07:45.135+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:07:45.135+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:07:45.135+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:07:45.135+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:07:45.136+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:07:45.136+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:07:45.136+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:07:45.136+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:07:45.138+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T16:07:45.138+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:07:45.142+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T16:07:45.142+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:45.142+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:07:45.143+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:45.149+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:07:45.149+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 竹取姬(String), dish(String), 51(Integer)
+2025-06-28T16:07:45.150+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:07:45.151+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:07:45.151+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 竹取姬(String), dish(String), 51(Integer)
+2025-06-28T16:07:45.152+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:07:46.673+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T16:07:46.673+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 竹取姬(String)
+2025-06-28T16:07:46.674+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 0
+2025-06-28T16:07:46.675+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.addCart          : ==>  Preparing: INSERT INTO cart(username,name,num,type) VALUES (?,?,?,?)
+2025-06-28T16:07:46.675+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.addCart          : ==> Parameters: 1716236031(String), 竹取姬(String), 2(Integer), dish(String)
+2025-06-28T16:07:46.679+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.addCart          : <==    Updates: 1
+2025-06-28T16:07:49.433+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:07:49.433+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:07:49.443+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:07:49.451+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:07:49.451+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:07:49.463+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:07:50.441+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.CartMapper.getAllProductName     : ==>  Preparing: SELECT name,num,type,cartId FROM cart WHERE username=?
+2025-06-28T16:07:50.442+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.CartMapper.getAllProductName     : ==> Parameters: 1716236031(String)
+2025-06-28T16:07:50.442+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.CartMapper.getAllProductName     : <==      Total: 3
+2025-06-28T16:07:50.443+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:50.443+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:07:50.444+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:50.445+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:50.445+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:07:50.446+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:50.447+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:50.447+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:07:50.448+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:54.899+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:54.900+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:07:54.902+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:54.902+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:54.902+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:07:54.903+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:07:54.904+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:07:54.905+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:07:54.905+08:00 DEBUG 19308 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:09:33.643+08:00  INFO 19308 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-28T16:09:33.646+08:00  INFO 19308 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-28T16:09:36.465+08:00  INFO 15924 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 15924 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
+2025-06-28T16:09:36.466+08:00 DEBUG 15924 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-06-28T16:09:36.466+08:00  INFO 15924 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-28T16:09:36.900+08:00  INFO 15924 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-28T16:09:36.902+08:00  INFO 15924 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-28T16:09:36.923+08:00  INFO 15924 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2025-06-28T16:09:37.268+08:00  INFO 15924 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
+2025-06-28T16:09:37.278+08:00  INFO 15924 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-28T16:09:37.278+08:00  INFO 15924 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-06-28T16:09:37.311+08:00  INFO 15924 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-28T16:09:37.311+08:00  INFO 15924 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 814 ms
+2025-06-28T16:09:37.772+08:00  WARN 15924 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
+2025-06-28T16:09:37.772+08:00  WARN 15924 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T16:09:37.907+08:00  WARN 15924 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
+2025-06-28T16:09:37.912+08:00  WARN 15924 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2025-06-28T16:09:37.923+08:00  WARN 15924 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
+2025-06-28T16:09:37.948+08:00  WARN 15924 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
+2025-06-28T16:09:37.948+08:00  WARN 15924 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T16:09:37.957+08:00  WARN 15924 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
+2025-06-28T16:09:38.238+08:00  INFO 15924 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
+2025-06-28T16:09:38.244+08:00  INFO 15924 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 2.013 seconds (process running for 2.368)
+2025-06-28T16:09:49.743+08:00  INFO 15924 --- [mystia-canteen] [http-nio-7078-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-28T16:09:49.744+08:00  INFO 15924 --- [mystia-canteen] [http-nio-7078-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-28T16:09:49.745+08:00  INFO 15924 --- [mystia-canteen] [http-nio-7078-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-06-28T16:09:49.901+08:00  INFO 15924 --- [mystia-canteen] [http-nio-7078-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-28T16:09:50.153+08:00  INFO 15924 --- [mystia-canteen] [http-nio-7078-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5221e1eb
+2025-06-28T16:09:50.154+08:00  INFO 15924 --- [mystia-canteen] [http-nio-7078-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-28T16:09:50.159+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:09:50.174+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:09:50.193+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:09:50.197+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:09:50.197+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:09:50.199+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:09:50.199+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:09:50.199+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:09:50.200+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:09:50.983+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:09:50.983+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:09:51.026+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:09:51.040+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:09:51.040+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:09:51.055+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:09:52.297+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T16:09:52.297+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:09:52.299+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:09:52.299+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:09:52.301+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:09:52.301+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:09:52.302+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T16:09:52.302+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:09:52.302+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:09:52.303+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:09:52.303+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:09:52.303+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:09:52.306+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:09:52.306+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:09:52.306+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:09:52.306+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:09:52.307+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:09:52.307+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:09:52.310+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:09:52.310+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 竹取姬(String), dish(String), 51(Integer)
+2025-06-28T16:09:52.311+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:09:52.311+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:09:52.312+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 竹取姬(String), dish(String), 51(Integer)
+2025-06-28T16:09:52.312+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:09:53.750+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T16:09:53.750+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 竹取姬(String)
+2025-06-28T16:09:53.752+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 1
+2025-06-28T16:09:53.759+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.updateNum        : ==>  Preparing: UPDATE cart SET num = num + ? WHERE cartId=?
+2025-06-28T16:09:53.760+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.updateNum        : ==> Parameters: 1(Integer), 19(Integer)
+2025-06-28T16:09:53.763+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.mapper.CartMapper.updateNum        : <==    Updates: 1
+2025-06-28T16:09:56.061+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:09:56.061+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:09:56.075+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:09:56.084+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:09:56.084+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:09:56.094+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:09:57.224+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:09:57.224+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:09:57.225+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:09:57.226+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:09:57.226+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:09:57.226+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:09:57.228+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:09:57.228+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:09:57.229+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:09:59.932+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:09:59.932+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:09:59.944+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-6] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:09:59.952+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:09:59.952+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:09:59.961+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-4] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:10:00.801+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:10:00.802+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:10:00.802+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:10:00.803+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:10:00.803+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:10:00.804+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-7] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:10:00.805+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : ==>  Preparing: UPDATE dish SET click=click+1 WHERE name=?
+2025-06-28T16:10:00.805+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:10:00.806+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:10:00.806+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:10:00.807+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:10:00.807+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:10:00.807+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: null, null, 0(Integer)
+2025-06-28T16:10:00.808+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-9] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:10:00.810+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.mapper.DishMapper.updateClick      : <==    Updates: 1
+2025-06-28T16:10:00.810+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:10:00.810+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:10:00.811+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-2] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:10:00.817+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:10:00.818+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 竹取姬(String), dish(String), 51(Integer)
+2025-06-28T16:10:00.819+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:10:00.819+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==>  Preparing: SELECT * FROM talk_message WHERE talk_with=? AND type=? AND productionId = ?
+2025-06-28T16:10:00.819+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : ==> Parameters: 竹取姬(String), dish(String), 51(Integer)
+2025-06-28T16:10:00.820+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-10] c.j.m.m.TalkMessageMapper.getMessage     : <==      Total: 0
+2025-06-28T16:10:02.395+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T16:10:02.395+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 竹取姬(String)
+2025-06-28T16:10:02.396+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 1
+2025-06-28T16:10:02.397+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.CartMapper.updateNum        : ==>  Preparing: UPDATE cart SET num = num + ? WHERE cartId=?
+2025-06-28T16:10:02.397+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.CartMapper.updateNum        : ==> Parameters: 11(Integer), 19(Integer)
+2025-06-28T16:10:02.400+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-1] c.j.m.mapper.CartMapper.updateNum        : <==    Updates: 1
+2025-06-28T16:10:05.976+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : ==>  Preparing: ( SELECT * FROM dish ORDER BY buy DESC ) UNION ALL ( SELECT * FROM drink ORDER BY buy DESC ) UNION ALL ( SELECT * FROM food ORDER BY buy DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY buy DESC ) ORDER BY buy DESC
+2025-06-28T16:10:05.976+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : ==> Parameters: 
+2025-06-28T16:10:05.986+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-3] c.j.m.m.A.selectAllSelectionHot          : <==      Total: 313
+2025-06-28T16:10:05.992+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==>  Preparing: ( SELECT * FROM dish ORDER BY click DESC ) UNION ALL ( SELECT * FROM drink ORDER BY click DESC ) UNION ALL ( SELECT * FROM food ORDER BY click DESC ) UNION ALL ( SELECT * FROM kitchenware ORDER BY click DESC ) ORDER BY click DESC
+2025-06-28T16:10:05.993+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : ==> Parameters: 
+2025-06-28T16:10:06.001+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-5] c.j.m.m.A.selectAllSelectionGood         : <==      Total: 313
+2025-06-28T16:10:07.124+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:10:07.124+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 饭团(String)
+2025-06-28T16:10:07.125+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:10:07.125+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:10:07.127+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 能量串(String)
+2025-06-28T16:10:07.127+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:10:07.128+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==>  Preparing: SELECT * FROM dish WHERE name = ?
+2025-06-28T16:10:07.128+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : ==> Parameters: 竹取姬(String)
+2025-06-28T16:10:07.129+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
+2025-06-28T16:10:14.169+08:00  INFO 15924 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-28T16:10:14.174+08:00  INFO 15924 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
