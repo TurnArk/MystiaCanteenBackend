@@ -13,5 +13,5 @@ public interface RedisService {
     public Boolean deleteProduct(String username, CartData cartData);
 
     // 将更新购物车商品信息
-    public Boolean UpdateProduct(String username, CartData cartData);
+    public Boolean updateProduct(String username, CartData cartData);
 }

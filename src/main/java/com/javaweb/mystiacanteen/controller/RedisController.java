@@ -26,7 +26,7 @@ public class RedisController {
     @PostMapping("/renew")
     public String renew(String username, CartData cartData)
     {
-        return redisService.UpdateProduct(username, cartData) ? "更新成功" : "更新失败";
+        return redisService.updateProduct(username, cartData) ? "更新成功" : "更新失败";
     }
 
     @PostMapping("/delete")
