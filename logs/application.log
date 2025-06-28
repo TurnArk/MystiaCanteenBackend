@@ -952,3 +952,47 @@ java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" becaus
 2025-06-28T16:10:07.129+08:00 DEBUG 15924 --- [mystia-canteen] [http-nio-7078-exec-8] c.j.m.m.DishMapper.selectDishByName      : <==      Total: 1
 2025-06-28T16:10:14.169+08:00  INFO 15924 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-06-28T16:10:14.174+08:00  INFO 15924 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-28T18:19:41.949+08:00  INFO 27180 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Starting MystiaCanteenApplication using Java 19.0.1 with PID 27180 (D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen\target\classes started by 17162 in D:\用户\桌面\期末大作业\Javaweb\mystiaCanteen)
+2025-06-28T18:19:41.950+08:00 DEBUG 27180 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Running with Spring Boot v3.3.5, Spring v6.1.14
+2025-06-28T18:19:41.950+08:00  INFO 27180 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-06-28T18:19:42.446+08:00  INFO 27180 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-28T18:19:42.448+08:00  INFO 27180 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-06-28T18:19:42.476+08:00  INFO 27180 --- [mystia-canteen] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2025-06-28T18:19:42.913+08:00  INFO 27180 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 7078 (http)
+2025-06-28T18:19:42.924+08:00  INFO 27180 --- [mystia-canteen] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-28T18:19:42.924+08:00  INFO 27180 --- [mystia-canteen] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-06-28T18:19:42.960+08:00  INFO 27180 --- [mystia-canteen] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-28T18:19:42.960+08:00  INFO 27180 --- [mystia-canteen] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 979 ms
+2025-06-28T18:19:43.469+08:00  WARN 27180 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.Cart".
+2025-06-28T18:19:43.470+08:00  WARN 27180 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.Cart ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T18:19:43.617+08:00  WARN 27180 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.Order"
+2025-06-28T18:19:43.622+08:00  WARN 27180 --- [mystia-canteen] [main] c.b.m.core.injector.methods.DeleteById   : [com.javaweb.mystiacanteen.mapper.OrderMapper.deleteById] Has been loaded by XML or SqlProvider or Mybatis's Annotation, so ignoring this injection for [class com.baomidou.mybatisplus.core.injector.methods.DeleteById]
+2025-06-28T18:19:43.632+08:00  WARN 27180 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.TalkMessage"
+2025-06-28T18:19:43.651+08:00  WARN 27180 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "com.javaweb.mystiacanteen.entity.User".
+2025-06-28T18:19:43.651+08:00  WARN 27180 --- [mystia-canteen] [main] c.b.m.core.injector.DefaultSqlInjector   : class com.javaweb.mystiacanteen.entity.User ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-06-28T18:19:43.659+08:00  WARN 27180 --- [mystia-canteen] [main] c.b.m.core.metadata.TableInfoHelper      : This primary key of "id" is primitive !不建议如此请使用包装类 in Class: "com.javaweb.mystiacanteen.entity.IdentifyCode"
+2025-06-28T18:19:43.980+08:00  INFO 27180 --- [mystia-canteen] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 7078 (http) with context path '/'
+2025-06-28T18:19:43.986+08:00  INFO 27180 --- [mystia-canteen] [main] c.j.m.MystiaCanteenApplication           : Started MystiaCanteenApplication in 2.32 seconds (process running for 2.745)
+2025-06-28T18:19:44.087+08:00  INFO 27180 --- [mystia-canteen] [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-28T18:19:44.322+08:00  INFO 27180 --- [mystia-canteen] [scheduling-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@cc9b328
+2025-06-28T18:19:44.324+08:00  INFO 27180 --- [mystia-canteen] [scheduling-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-28T18:19:44.328+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T18:19:44.344+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 饭团(String)
+2025-06-28T18:19:44.362+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 1
+2025-06-28T18:19:44.367+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : ==>  Preparing: UPDATE cart SET num = num + ? WHERE cartId=?
+2025-06-28T18:19:44.368+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : ==> Parameters: 2(Integer), 16(Integer)
+2025-06-28T18:19:44.375+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : <==    Updates: 1
+2025-06-28T18:19:44.376+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T18:19:44.376+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 能量串(String)
+2025-06-28T18:19:44.376+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 1
+2025-06-28T18:19:44.378+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : ==>  Preparing: UPDATE cart SET num = num + ? WHERE cartId=?
+2025-06-28T18:19:44.378+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : ==> Parameters: 1(Integer), 17(Integer)
+2025-06-28T18:19:44.379+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : <==    Updates: 1
+2025-06-28T18:19:44.380+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : ==>  Preparing: SELECT cartId FROM cart WHERE username=? AND name=?
+2025-06-28T18:19:44.380+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : ==> Parameters: 1716236031(String), 竹取姬(String)
+2025-06-28T18:19:44.381+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.findCartId       : <==      Total: 1
+2025-06-28T18:19:44.381+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : ==>  Preparing: UPDATE cart SET num = num + ? WHERE cartId=?
+2025-06-28T18:19:44.381+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : ==> Parameters: 14(Integer), 19(Integer)
+2025-06-28T18:19:44.383+08:00 DEBUG 27180 --- [mystia-canteen] [scheduling-1] c.j.m.mapper.CartMapper.updateNum        : <==    Updates: 1
+2025-06-28T18:58:54.562+08:00  INFO 27180 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-28T18:58:54.567+08:00  INFO 27180 --- [mystia-canteen] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
