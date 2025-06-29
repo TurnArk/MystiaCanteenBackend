@@ -1,5 +1,8 @@
 package com.javaweb.mystiacanteen.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.javaweb.mystiacanteen.entity.CartData;
 import com.javaweb.mystiacanteen.entity.Production;
 import com.javaweb.mystiacanteen.service.RedisService;
@@ -44,21 +47,35 @@ public class RedisController {
             return "系统繁忙，请稍后再试";
         }
         try {
-            Integer stock = (Integer) redisTemplate.opsForValue().get("id:2011");
-            if (stock == null || stock <= 0) {
-                return "库存不足";
+            Object jsonStr = redisTemplate.opsForValue().get("discountProduction");
+            if(jsonStr == null){
+                return "商品不存在";
+            }
+            ObjectMapper objectMapper = new ObjectMapper();
+            if(jsonStr instanceof String){
+                String json = (String) jsonStr;
+                JsonNode jsonNode = objectMapper.readTree(json);
+                int stock = jsonNode.has("number")?jsonNode.get("number").asInt():0;
+                if(stock <= 0){
+                    return "商品已售罄";
+                }
+
+                // 自减
+                ((ObjectNode) jsonNode).put("number", stock - 1);
+                // 序列化回 JSON
+                String updateJson = objectMapper.writeValueAsString(jsonNode);
+                redisTemplate.opsForValue().set("discountProduction", updateJson);
+
+                return redisService.updateProduct(username, cartData) ?"秒杀成功！库存剩余：" + (stock - 1):"更新失败";
+            }else{
+                return "数据格式错误";
             }
 
-            Long newStock = redisTemplate.opsForValue().decrement("id:2011");
-            if (newStock < 0) {
-                // 回滚超减
-                redisTemplate.opsForValue().increment("id:2011");
-                return "库存不足";
-            }
-            // TODO：下单入库逻辑
-            return redisService.updateProduct(username, cartData) ?"秒杀成功！库存剩余：" + newStock:"更新失败";
-
-        } finally {
+        }catch (Exception e){
+            e.printStackTrace();
+            return "系统异常，请稍后再试";
+        }
+        finally {
             redisTemplate.delete(lockKey);
         }
     }
