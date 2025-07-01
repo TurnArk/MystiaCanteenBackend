@@ -3,6 +3,7 @@ package com.javaweb.mystiacanteen.controller;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.javaweb.mystiacanteen.dto.DishDTO;
 import com.javaweb.mystiacanteen.entity.CartData;
 import com.javaweb.mystiacanteen.entity.Production;
 import com.javaweb.mystiacanteen.service.RedisService;
@@ -67,6 +68,16 @@ public class RedisController {
                 redisTemplate.opsForValue().set("discountProduction", updateJson);
 
                 return redisService.updateProduct(username, cartData) ?"秒杀成功！库存剩余：" + (stock - 1):"更新失败";
+            }else if(jsonStr instanceof Production) {
+                DishDTO dishDTO = objectMapper.convertValue(jsonStr, DishDTO.class);
+                int stock = dishDTO.getNumber();
+                if(stock <= 0){
+                    return "商品已售罄";
+                }
+                dishDTO.setNumber(stock - cartData.getNum());
+                redisTemplate.opsForValue().set("discountProduction", dishDTO);
+                return redisService.updateProduct(username, cartData) ?"秒杀成功！库存剩余：" + (stock - cartData.getNum()):"更新失败";
+
             }else{
                 return "数据格式错误";
             }
